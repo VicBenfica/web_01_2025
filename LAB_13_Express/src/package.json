@@ -1,0 +1,27 @@
+{
+  "name": "web_01_2025",
+  "version": "1.0.0",
+  "description": "A disciplina **Desenvolvimento Web** aborda conceitos fundamentais do **backend**, ensinando como construir APIs eficientes e seguras. Durante o curso, os alunos aprenderão sobre **Node.js, Express, bancos de dados SQL/NoSQL, autenticação e segurança**.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VicBenfica/web_01_2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VicBenfica/web_01_2025/issues"
+  },
+  "homepage": "https://github.com/VicBenfica/web_01_2025#readme",
+  "dependencies": {
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
