@@ -1,4 +1,4 @@
-import mysql, { Connection, QueryError } from 'mysql2';
+import mysql, { Connection} from 'mysql2';
 
 const dbConfig = {
     host: 'localhost',
@@ -6,6 +6,7 @@ const dbConfig = {
     user: 'root',
     password: 'mysql',
     database: 'vendas'
+    
 };
 
 const mysqlConnection: Connection = mysql.createConnection(dbConfig);
@@ -15,6 +16,15 @@ mysqlConnection.connect((err) => {
         console.error('Erro ao conectar ao banco de dados:', err);
         throw err;
     }
-    console.log('Conexao bem-sucedida com o banco de dados MySQL');
+    console.log('Conexão bem-sucedida com o banco de dados MySQL');
 });
 
+export function executarComandoSQL(query: string, valores: any[], callback: (err:any, result:any)=>void){
+    mysqlConnection.query(query, valores, (err, resultado:any) => {
+        if (err) {
+            console.error('Erro ao executar a query.', err);
+            throw err;
+        }
+        return  callback(err,resultado);
+    });
+}
